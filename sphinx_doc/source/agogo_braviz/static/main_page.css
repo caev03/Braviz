@@ -1,0 +1,93 @@
+/*
+Style overrides for the main page
+*/
+
+div.document {
+float : none;
+}
+
+div.document h1 {
+  line-height: 120%;
+  display: None;
+}
+
+div#profile{
+text-align: center;
+}
+
+div.document h2{
+text-align: center;
+font-size: 150%;
+}
+
+
+div#profile div.section{
+text-align: left;
+width: 95% ;
+display: inline-block;
+margin-left: 0.5em;
+margin-right: 0.5em;
+margin-top: 2em;
+background: rgb(238, 238, 236);
+vertical-align: top;
+min-height: 25em;
+position: relative;
+color: black;
+}
+
+div#profile a div.section{
+    border: outset lightgrey;
+}
+div#profile div.section:hover  {
+background-color: #A6C0AF;
+}
+
+div#profile div.section:hover h3 {
+background-color: #225935;
+color: white;
+}
+
+div#profile div.section blockquote{
+padding-left: 1em;
+margin-bottom: 1em;
+padding-bottom: 2em;
+}
+
+div#profile div.section p{
+text-align:center;
+margin-top: 1em;
+margin-bottom: 1em;
+bottom: 0;
+width: 100%;
+}
+
+div#profile div.section h3{
+text-align: center;
+background: rgb(218, 221, 214);
+padding-top: .5em;
+padding-bottom: .5em;
+font-size: 150%;
+}
+
+div.main-logo img.logo{
+    margin: 0px auto;
+    display:block;
+    max-width: 90%;
+}
+
+div.bravizvideo {
+text-align : center;
+margin: 2em;
+}
+}
+
+@media screen and (min-width: 1150px){
+div#profile div.section{
+width: 21em ;
+}
+div#profile div.section p{
+position: absolute;
+}
+}
+
+

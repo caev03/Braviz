@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="pytanic_css.css">
+  <script src="pytanic_faq_js.js"></script>
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#braviz-frequenty-asked-questions">Braviz Frequenty Asked Questions</a><ul>
+<li><a href="#subject-overview">Subject Overview</a><ul>
+<li><a href="#images">Images</a></li>
+<li><a href="#segmented-structures">Segmented Structures</a></li>
+<li><a href="#tractography">Tractography</a></li>
+<li><a href="#context-panel">Context Panel</a></li>
+</ul></li>
+<li><a href="#samples-overview">Samples Overview</a></li>
+<li><a href="#anova-analysis">Anova Analysis</a></li>
+<li><a href="#linear-regression">Linear Regression</a></li>
+<li><a href="#scenarios">Scenarios</a></li>
+<li><a href="#subsamples">Subsamples</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="braviz-frequenty-asked-questions">Braviz Frequenty Asked Questions</h1>
+<hr />
+<h2 id="subject-overview">Subject Overview</h2>
+<h4 id="where-do-i-start">Where do I start?</h4>
+<blockquote>
+<p>This application can show you several types of data from a single subject. In the buttom frame you find some information about the current subj and the left panel provide controls over what you are seeing in the main view. The different tabs in the left panel allow you to control diferent kinds of data. There are tabs for controlling</p>
+<ul>
+<li>Images</li>
+<li>Segmented Structures</li>
+<li>Tractography</li>
+<li>Cortex parcelations</li>
+</ul>
+<p>Additionally there are two tabs that give additional tabular information of the subject. The arrows under the main view can be used to cycle through subjects. Finally the panel at the bottom left allows you to reset the camera to standard views, and to change the coordinate system.</p>
+</blockquote>
+<h4 id="how-do-i-navigate-the-3d-view">How do I navigate the <em>3D</em> View?</h4>
+<blockquote>
+<p>When you click over an image or a cortical surface, you will be able to query information about them. In order to move the camera it is necessary to click <em>outside</em> from any of these. * To rotate the view, click, hold and move. Release the button to stop. * To rotate about an axis perpendicular to the screen, hold <em>control</em>, click, hold and move, as above. * To pan the view, middle-click hold and move. Release the button to stop. Alternatively use left click while holding shift. * To zoom the view right-click hold and move up or down. Release the button to stop. Alternatively you can use the mouse wheel. If you want to reset the camera look at the next question.</p>
+</blockquote>
+<h4 id="how-do-i-reset-the-camera">How do I reset the camera?</h4>
+<blockquote>
+<p>In the bottom-left you will find a box labeled &quot;camera to:&quot;, which will allow you to reset the camera to some useful predefined positions.</p>
+</blockquote>
+<h4 id="how-do-i-change-subject">How do I change subject?</h4>
+<blockquote>
+<p>Use the arrows under the main view. Alternatively, go to the subjects tab of the left panel and double click a subject in the list.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-current-coordinate-system">How do I change the current <em>coordinate</em> system ?</h4>
+<blockquote>
+<p>In the bottom-left you will find a box labeled &quot;Coordinates&quot;, which will allow you to choose a coordinate system for the viewer.</p>
+</blockquote>
+<h4 id="coordinates">What <em>coordinate</em> systems are available?</h4>
+<blockquote>
+<p>Currently there are three coordinate systems available: * World: This correspond to real world coordinates in <em>mm</em>. * Talairach: Individuals are mapped to a talairach standard brain using an affine transform. This means that all objects are rotated and scaled in order to match the template. Relative distances are preserved. * Dartel: A non linear transformation is applied to map subjects to a Dartel template. Here each area of the brain is distorted in a different way, resulting in a very close match, but significant overall distortion. This is useful for comparing values at approximately similar locations across different subjects.</p>
+</blockquote>
+<h4 id="how-can-i-save-my-work">How can I <em>Save</em> my work?</h4>
+<blockquote>
+<p>Click in the &quot;file&quot; menu and afterwards in &quot;save scenario&quot;. You will be given the option to write a description that could be helpful in the future to identify this scenario.</p>
+</blockquote>
+<h4 id="how-can-i-load-a-previous-state">How can I <em>Load</em> a previous state?</h4>
+<blockquote>
+<p>Click in the &quot;file&quot; menu and afterwards in &quot;load scenario&quot;. A dialog will appear where you can select among all the scenarios you have saved.</p>
+</blockquote>
+<h3 id="images">Images</h3>
+<p>Most image manipulation tasks are carried out using the image tab of the left frame.</p>
+<h4 id="how-do-i-change-the-image-slice">How do I change the Image <em>slice</em></h4>
+<blockquote>
+<p>Use the slice box or the slider in the Image tab. Alternatively hold the middle mouse button over the image and move the mouse.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-current-image">How do I change the current Image?</h4>
+<blockquote>
+<p>Use the modality box in the Image tab.</p>
+</blockquote>
+<h4 id="how-do-i-hide-the-image">How do I <em>hide</em> the Image?</h4>
+<blockquote>
+<p>Select None in the modality box of the image tab.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-orientation-of-the-image">How do I change the <em>orientation</em> of the Image ?</h4>
+<blockquote>
+<p>Use the Orientation box in the image tab. Notice the camera will not move when changing the orientation, so you will probably have to move it in order to get a good view of the new image.</p>
+</blockquote>
+<h3 id="segmented-structures">Segmented Structures</h3>
+<p>Most of the tasks in this list are accomplished using the Segmentation tab of the left panel.</p>
+<h4 id="how-do-i-display-structures">How do I display structures?</h4>
+<blockquote>
+<p>Use the list in the Segmentation tab to <em>check</em> the structures you want to see.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-color-of-the-structures">How do I change the <em>color</em> of the structures?</h4>
+<blockquote>
+<p>Use the color box below the list in the Segmentation tab. Selecting Free Surfer will use the free surfer color table, selecting custom will allow you to select a color.</p>
+</blockquote>
+<h4 id="how-can-i-display-areas-of-the-dominant-cortex">How can I display areas of the <em>dominant</em> cortex?</h4>
+<blockquote>
+<p>By default the list displays the right and left cortex as two separate sub-trees. If you prefer to work with dominant and non-dominant cortexes, use the radio button on top of the list.</p>
+</blockquote>
+<h4 id="how-can-i-calculate-metrics-from-the-structures">How can I <em>calculate</em> metrics from the structures?</h4>
+<blockquote>
+<p>At the bottom of the tab there is a button which allows you to select among different metrics. Currently these are</p>
+<ul>
+<li>Volume: The total volume of the structures (always in world coordinates)</li>
+<li>Area: The surface area of the displayed structures. In case that more than one structure is showed, their values are added together.</li>
+<li>FA Inside: The mean FA value of the voxels inside the displayed structures</li>
+<li>MD Inside: The mean MD value of the voxels inside the displayed structures</li>
+</ul>
+<p>The calculated value will be displayed next to the box. The button labeled &quot;Export to database&quot; will open a dialog that will allow you to repeat the calculation for all subjects and save the results into the database.</p>
+</blockquote>
+<h3 id="tractography">Tractography</h3>
+<blockquote>
+<p>Most of the tasks in this list are accomplished using the Segmentation tab of the left panel.</p>
+</blockquote>
+<h4 id="how-can-i-see-the-full-tractography">How can I see the <em>full</em> tractography?</h4>
+<blockquote>
+<p>Click on the &quot;Select Saved Bundles&quot; button and select the bundle called All near the top of the list.</p>
+</blockquote>
+<h4 id="how-can-i-filter-fibers">How can I <em>filter</em> fibers?</h4>
+<blockquote>
+<p>It is possible to filter the tractography using segmented structures. For these look at the box labeled &quot;From Seg.&quot; There will be two options</p>
+<ul>
+<li>Through Any: Display fibers that cross any of the displayed structures</li>
+<li>Through All: Display fibers that pass through all the displayed structures</li>
+</ul>
+<p>Fiber bundles defined in this way can be <em>saved</em> using the &quot;Save Bundle&quot; button, and will be afterwards available in the Select Saved Bundle dialog. Most complex fiber selection operations will be available in a future tool.</p>
+</blockquote>
+<h4 id="how-can-i-change-the-color-of-the-current-fibers">How can I change the <em>color</em> of the current fibers ?</h4>
+<blockquote>
+<p>The box labeled color has several options for coloring the fibers:</p>
+<ul>
+<li>Orientation: Segments going from left to right will be colored red, segments from top to buttom will be blue and segments from back to front will be green</li>
+<li>FA (Point): The colors of each point are determined by the FA value at the corresponding voxel. A color bar is available with the convention.</li>
+<li>FA (Line): The colors of each line are determined by the mean FA value across the complete line. A color bar is available with the convention.</li>
+<li>MD (Point): The colors of each point are determined by the MD value at the corresponding voxel. A color bar is available with the convention.</li>
+<li>MD (Line): The colors of each line are determined by the mean MD value across the complete line. A color bar is available with the convention.</li>
+<li>Length: The colors of each line are determined according to its length. A color bar is available.</li>
+<li>By Line: A random color is assigned to each line, this makes it easy to follow a single line.</li>
+<li>By Bundle: Each bundle (loaded through the &quot;select saved bundles button&quot;) is assigned a different color</li>
+</ul>
+</blockquote>
+<h4 id="how-can-i-view-multiple-bundles">How can I view multiple <em>bundles</em> ?</h4>
+<blockquote>
+<p>The &quot;Select Saved Bundles&quot; button can be used to add bundles to the current display.</p>
+</blockquote>
+<h4 id="how-can-i-calculate-metrics-of-the-current-fibers">How can I <em>calculate</em> metrics of the current fibers?</h4>
+<blockquote>
+<p>First you have to select a bundle by double clicking it in the Bundles list. The selected bundle is shown at the end of the Tractography tab. There is a box towards the bottom of the tab that can be used to select among different metrics, the value will be shown in the box next to it. The &quot;Export to Database&quot; button can be used to calculate this values for all subjects and save the results into the database.</p>
+</blockquote>
+<h3 id="context-panel">Context Panel</h3>
+<h4 id="how-can-i-change-the-displayed-variables">How can I change the displayed variables?</h4>
+<blockquote>
+<p>Right click anywhere in the context panel, and click on &quot;Change Variables&quot; in the context menu. A dialog will appear. To add a variable, double click on its name in the top list, review metadata, and then click on &quot;Save and Add&quot;. The variable should now appear on the bottom list. To remove a variable, right click on its name in the bottom list, and click on &quot;remove&quot;.</p>
+</blockquote>
+<h4 id="how-can-i-define-a-new-variable">How can I define a new variable?</h4>
+<blockquote>
+<p>Right click on anywhere in the context panel, and click on &quot;Change Variables&quot; in the context menu. The variable selection dialog will appear. Between the two lists at the left you will find a button labeled &quot;Create Variable&quot;. A dialog will appear, where you should enter the new variable name, its type, and description. If the variable is nominal, it is highly recommended to use this dialog to define the <em>labels</em> for the different levels.</p>
+</blockquote>
+<h2 id="samples-overview">Samples Overview</h2>
+<h4 id="what-am-i-looking-at">What am I looking at?</h4>
+<blockquote>
+<p>This tool shows you data from several subjects at the same time. 3d data is organized in groups and sorted from left to right. The data inside each of the views is loaded from a scenario defined in the <em>Subject</em> <em>overview</em> tool. In order to load a view, click in the &quot;file&quot; menu and then in &quot;load visualization&quot;. A dialog will appear where you can access all of your saved scenarios.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-current-camera">How do I change the current camera?</h4>
+<blockquote>
+<p>You can click in an empty space in any of the 3d viewers and navigate as if you were in the subject overview application. Afterwards you may use the &quot;Camera&quot; box in order to copy the camera to all the viewers or to reload the original camera.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-grouping-variable">How do I change the <em>grouping</em> variable?</h4>
+<blockquote>
+<p>Use the &quot;Facet Variable&quot; box. Notice that only <em>nominal</em> variables can be selected for this role.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-sorting-variable">How do I change the <em>sorting</em> variable?</h4>
+<blockquote>
+<p>Use the &quot;Sort Variable&quot; box. Notice that only <em>rational</em> variables can be selected for this role.</p>
+</blockquote>
+<h4 id="how-do-i-change-the-current-coordinates">How do I change the current <em>coordinates</em>?</h4>
+<blockquote>
+<p>Use the coordinates box. For an overview of the available coordinates look at <a href="#coordinates">What coordinates systems are available?</a></p>
+</blockquote>
+<h2 id="anova-analysis">Anova Analysis</h2>
+<h4 id="how-do-i-perform-an-anova-analysis">How do I perform an Anova analysis?</h4>
+<h4 id="what-is-an-outcome-variable-dependent-variable">What is an <em>outcome</em> variable (Dependent variable)?</h4>
+<blockquote>
+<p>This is the variable that is affected by a change in the other variables. Also called response, dependent variable or <span class="math"><em>y</em></span>. This could also be a variable we are interested in predict based on the other variables (regressors).</p>
+</blockquote>
+<h4 id="how-do-i-add-regressors-or-independent-variables">How do I add regressors or independent variables?</h4>
+<blockquote>
+<p>To add independent variables click on the &quot;add regressor&quot; button. A dialog where you can select variables will be shown. Select a variable by double clicking on its name, review the meta data information at the middle of the dialog, and afterwards click on &quot;save and add&quot; in the left.</p>
+</blockquote>
+<h4 id="how-do-i-add-interactions">How do I add interactions?</h4>
+<blockquote>
+<p>Click in the &quot;add interaction&quot; button. A dialog with the current regressors on top and the current interactions in the button will be shown. To add a single interaction term, select the factors in the top list (by hodling ctrl and clicking on their names) and then click on add single term. If you want to add all the possible interactions between the variables click in add all combinations. When you are done close the dialog by clicking on the close button at the top of the window.</p>
+</blockquote>
+<h4 id="how-do-i-remove-a-regressor-or-interaction">How do I remove a regressor or interaction ?</h4>
+<blockquote>
+<p>Right click on its name in the regressors list, and select remove.</p>
+</blockquote>
+<h4 id="what-is-the-residuals-plot">What is the <em>residuals</em> plot ?</h4>
+<blockquote>
+<p>The residuals plot show the distribution of the residuals after fitting the model. If the Anova's pre conditions are met, these residuals should be distributed in a normal distribution, and they should be independent from the outcome variable. If you notice that the residuals histogram is skewed or that the variance changes with the outcome variable, you should rethink your model. Maybe you are missing a variable, or maybe variables should be transformed.</p>
+</blockquote>
+<h4 id="what-type-of-sum-of-squares-is-being-used-for-the-calculation">What type of sum of squares is being used for the calculation?</h4>
+<blockquote>
+<p>We are using a type 3 sum of squares, as defined in the <a href="http://cran.r-project.org/web/packages/car/">car</a> anova function. We chose this type of sum because that is the default in many of the statistical software used in the domain.</p>
+</blockquote>
+<h2 id="linear-regression">Linear Regression</h2>
+<h4 id="are-variables-in-the-linear-model-centered">Are variables in the linear model centered?</h4>
+<blockquote>
+<p>Yes, all rational variables are standardized by substracting the mean and dividing by 2 standard deviations. All nominal variables with two levels are standardized in such a way that the mean is zero, and the standard deviation is 1. Nominal variables with more than two levels are left as they are. The outcome variable is also standardized. All of this is accomplished using the &quot;Standardize&quot; function in the <a href="http://cran.r-project.org/web/packages/arm/index.html">ARM</a> package.</p>
+</blockquote>
+<h4 id="what-is-the-coefficients-plot">What is the <em>coefficients</em> plot?</h4>
+<blockquote>
+<p>The coefficients plot gives a quick indication of which coefficients are important for the model. The thick line corresponds to 1 standard deviation, and the thin line to the 95% confidence interval. If any of these lines cross the zero line, then that coefficient is not significantly different from zero. Also, the further away the coefficients are from the zero, the largest the effect size.</p>
+</blockquote>
+<h2 id="scenarios">Scenarios</h2>
+<h4 id="what-are-scenarios">What are scenarios?</h4>
+<blockquote>
+<p>Scenarios inside braviz correspond to states of the different tools. These include the selected variables, cameras for 3d views, selected structures in views, etc. The idea is to keep track of your exploration, to enable you to go back to a previous state, and to re visit interesting visializations.</p>
+</blockquote>
+<h2 id="subsamples">Subsamples</h2>
+<h4 id="what-are-samples">What are samples?</h4>
+<blockquote>
+<p>Samples allow you to run all kinds of analyses in a subset of the population. You may define for example a sample for only female participants and run specific tests in this smaller population. Most of the tools in the braviz toolkit have an option to select a subsample.</p>
+</blockquote>
+<h4 id="how-do-i-define-a-new-subsample">How do I define a new subsample?</h4>
+<blockquote>
+<p>When clicking in &quot;new&quot; in the subsamples dialog a dialog will appear. The left panel provides a working space, and the right panel provides a view of the current sample. In the middle there are buttons which allow you to move data between the two panels. You may hover the mouse over them to get a better idea of what they do. You may also right click in a single subject in the left panel to show a context menu with the option of adding him manually to the sample. In the same way you can right click in individual subjects in the right panel in order to remove them from the sample (for example outliers or erroneus data).</p>
+</blockquote>
+</body>
+</html>

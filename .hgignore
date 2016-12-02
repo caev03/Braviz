@@ -1,0 +1,12 @@
+syntax: glob
+.idea/*
+*.pyc
+braviz/vtkError.log
+braviz/interaction/qt_guis/*.py
+braviz/applications/braviz.cfg
+*/Thumbs.db
+sphinx_doc/build/*
+braviz/readAndFilter/*.py.orig
+braviz/interaction/qt_guis/*.ui.orig
+braviz/applications/*_hosts.cfg
+concept_tests/web_logger.txt
