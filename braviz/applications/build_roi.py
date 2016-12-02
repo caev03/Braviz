@@ -19,6 +19,7 @@
 
 from __future__ import division, print_function
 from braviz.utilities import set_pyqt_api_2
+
 set_pyqt_api_2()
 
 import logging
@@ -34,9 +35,11 @@ import vtk
 import numpy as np
 from scipy import ndimage
 
+from braviz.interaction.qt_structures_model import StructureTreeModel
 import braviz
 
 from braviz.interaction.qt_guis.roi_builder import Ui_RoiBuildApp
+from braviz.readAndFilter.link_with_rdf import cached_get_free_surfer_dict
 from braviz.interaction.qt_guis.roi_builder_start import Ui_OpenRoiBuilder
 from braviz.interaction.qt_guis.new_roi import Ui_NewRoi
 from braviz.interaction.qt_guis.load_roi import Ui_LoadRoiDialog
@@ -54,6 +57,7 @@ from braviz.interaction.roi import export_roi
 from braviz.interaction.qt_widgets import ImageComboBoxManager, ContrastComboManager
 from braviz.readAndFilter.config_file import get_config
 from braviz.interaction.sample_select import SampleLoadDialog
+from braviz.interaction.structure_metrics import solve_laterality
 __author__ = 'Diego'
 
 AXIAL = 2
@@ -114,6 +118,10 @@ class ExtrapolateDialog(QDialog):
         self.__origin = initial_source
         self.__reader = reader
         self.__pos_opt = PositionOptimizer(reader)
+        conf = braviz.readAndFilter.config_file.get_apps_config()
+        lat_var = conf.get_laterality()
+        self.lat_idx = braviz.readAndFilter.tabular_data.get_var_idx(lat_var[0])
+        self.left_handed = lat_var[1]
         self.spheres_df = None
         data_cols = self.create_data_cols()
         self.targets_model = SubjectCheckTable(
@@ -184,45 +192,137 @@ class ExtrapolateDialog(QDialog):
                                                        subj_img_id, inverse=False)
         return r_pt
 
-    def extrapolate_one(self, target):
+    def extrapolate_one(self, target, vector, lists):
+        from scipy.interpolate import griddata
         log = logging.getLogger(__file__)
         log.debug("extrapolating %s", target)
         if target == self.__origin:
             return
+        # print(vector)
+        aDict = {}
+        aVec = []
+        for v in vector:
+            aDict[v[0].__str__()+","+v[1].__str__()+","+v[2].__str__()] = v
+            aVec.append([v[0],v[1],v[2]])
+        tempVector = self.getDistanceVector(target, lists)
+        tempVector = tempVector[0]
+        answ = []
+        for i in range(3):
+            values = []
+            for v in tempVector:
+                values.append(v[i])
+            answ.append(griddata(aVec,values,np.array(self.__origin_center),method='nearest'))
+        print("Original")
+        print(self.__origin_center)
+        print("Calculado")
+        print(answ)
+        print("Recalculado")
+        b = self.__origin_center;
+        print([((b[0]+answ[0])/2),((b[1]+answ[1])/2),((b[2]+answ[2])/2)])
+
+
+
+        # vector = np.array(vector)
+        # # print(vector[:,0])
+        # vectorr = [vector[:,0],vector[:,1],vector[:,2]]
+        # print(vectorr)
         # coordinates
-        if self.__link_space == "None":
-            ctr = self.__origin_center
-        else:
-            try:
-                ctr = self.translate_one_point(self.__center_link, target)
-            except Exception:
-                log.warning("Couldn't extrapolate subject %s", target)
-                return
+        # aVect = []
+        # aDict = {}
+        # for iter in range(vector.__len__()):
+        #     aVect.append([vector[iter][0],vector[iter][1],vector[iter][2],iter])
+        #     aDict[iter] = vector[iter][3]
+        # vector = np.array(aVect)
+        # # print(vector)
+        # vector = np.sort(vector, 0)
+        # vectoor = []
+        # for vect in range(vector.__len__()):
+        #     vectoor.append([vector[vect][0],vector[vect][1],vector[vect][2],aDict[vector[vect][3]]])
+        # vector = np.array(vectoor)
+        # # print(vector)
+        # x = []
+        # y = []
+        # z = []
+        # for vect in vector:
+        #     x.append(vect[0])
+        #     y.append(vect[1])
+        #     z.append(vect[2])
+        # x = list(np.array(x).astype(float))
+        # y = list(np.array(y).astype(float))
+        # z = list(np.array(z).astype(float))
+        # tempVector = self.getDistanceVector(target,lists)
+        # tempVector = tempVector[0]
+        # tempVector = self.sortVector(tempVector,vector)
+        # values = [[],[],[]]
+        # print(values.__len__())
+        # for i in range(3):
+        #     for vect in tempVector:
+        #         values[i].append(vect[i])
+        #     # print("a")
+        #     # print(x)
+        #     # print("b")
+        #     # print(y)
+        #     # print("c")
+        #     # print(z)
+        #     # print("d")
+        #     # print(values)
+        # values = [[values[0]],[values[1]],[values[2]]]
+        # print(values[0])
+        # print(values[1])
+        # print(values[2])
+        # myIntFunc = RegularGridInterpolator((x,y,z),values)
+        # print(tempVector[0])
+        # print(myIntFunc(vector[0]))
+        # if self.__link_space == "None":
+        #     ctr = self.__origin_center
+        # else:
+        #     try:
+        #         ctr = self.translate_one_point(self.__center_link, target)
+        #     except Exception:
+        #         log.warning("Couldn't extrapolate subject %s", target)
+        #         return
+        #
+        # max_opt = self.ui.optimize_radius.value()
+        # if max_opt > 0:
+        #     try:
+        #         log.info("optimizing")
+        #         subj_img_id = target
+        #         self.__pos_opt.get_optimum(
+        #             ctr, max_opt, subj_img_id, self.__roi_space, "FA")
+        #     except Exception:
+        #         log.warning("Couldn't optimize for subject %s", target)
+        #         return
+        #
+        # # radius
+        # if self.__scale_radius is False or self.__link_space == "None":
+        #     r = self.__origin_radius
+        # else:
+        #     vecs_roi = np.array(
+        #         [self.translate_one_point(r, target) for r in self.__radius_link])
+        #     r_roi = vecs_roi - ctr
+        #     # print r_roi
+        #     norms_r_roi = np.apply_along_axis(np.linalg.norm, 1, r_roi)
+        #     # print norms_r_roi
+        #     r = np.mean(norms_r_roi)
+        #
+        # geom_db.save_sphere(self.__sphere_id, target, r, ctr)
 
-        max_opt = self.ui.optimize_radius.value()
-        if max_opt > 0:
-            try:
-                log.info("optimizing")
-                subj_img_id = target
-                self.__pos_opt.get_optimum(
-                    ctr, max_opt, subj_img_id, self.__roi_space, "FA")
-            except Exception:
-                log.warning("Couldn't optimize for subject %s", target)
-                return
+    def sortVector(self, tempVector, vector):
+        dict = {}
+        for iter in tempVector:
+            dict[iter[3]] = iter
+        ansVec = []
+        for iter in vector:
+            ansVec.append(dict[iter[3]])
+        return ansVec
 
-        # radius
-        if self.__scale_radius is False or self.__link_space == "None":
-            r = self.__origin_radius
-        else:
-            vecs_roi = np.array(
-                [self.translate_one_point(r, target) for r in self.__radius_link])
-            r_roi = vecs_roi - ctr
-            # print r_roi
-            norms_r_roi = np.apply_along_axis(np.linalg.norm, 1, r_roi)
-            # print norms_r_roi
-            r = np.mean(norms_r_roi)
+    def buildDimention(self, vector, dimention):
+        vectorr = []
+        for vect in vector:
+            vectorr.append([[vect[dimention]]])
+        return vectorr
 
-        geom_db.save_sphere(self.__sphere_id, target, r, ctr)
+
 
     def start_button_handle(self):
         if self.__started is True:
@@ -232,6 +332,20 @@ class ExtrapolateDialog(QDialog):
             self.__cancel_flag = False
             self.ui.start_button.setText("Cancel")
             self.extrapolate_selected()
+
+    def __get_laterality(self, current_user):
+        log = logging.getLogger(__file__)
+        try:
+            label = braviz.readAndFilter.tabular_data.get_var_value(
+                self.lat_idx, current_user)
+        except Exception:
+            log.warning(
+                "Laterality no found for subject %s, assuming right handed" % self.__current_subject)
+            label = 1
+        if label is None or (int(label) == self.left_handed):
+            return "l"
+        else:
+            return "r"
 
     def extrapolate_selected(self):
         self.__started = True
@@ -247,6 +361,9 @@ class ExtrapolateDialog(QDialog):
         self.__origin_radius = origin_sphere[0]
         self.__origin_center = origin_sphere[1:4]
         self.__origin_img_id = self.__origin
+        result = self.getDistanceVector(self.__origin,None)
+        vector = result[0]
+        lists = result[1]
         if self.__link_space != "None":
             # roi -> world
             ctr_world = self.__reader.transform_points_to_space(self.__origin_center, self.__roi_space,
@@ -267,12 +384,14 @@ class ExtrapolateDialog(QDialog):
                                                                             self.__origin_img_id, inverse=False) for r in
                                     rad_vectors_world)
                 self.__radius_link = list(rad_vectors_link)
-
+        # #
+        print(selected.__len__())
         for i, s in enumerate(selected):
             QtGui.QApplication.instance().processEvents()
             if self.__cancel_flag is True:
                 break
-            self.extrapolate_one(s)
+            print(s)
+            self.extrapolate_one(s,vector,lists)
             self.ui.progressBar.setValue((i + 1) * 100 / len(selected))
         r, c = self.create_data_cols()
         self.targets_model.set_data_cols((r, c))
@@ -281,6 +400,53 @@ class ExtrapolateDialog(QDialog):
         self.set_controls(1)
         QtCore.QTimer.singleShot(
             1000, partial_f(self.ui.start_button.setEnabled, 1))
+
+    def getDistanceVector(self, subject,nameList=None):
+        self.reaader = braviz.readAndFilter.BravizAutoReader()
+        self.stm_test = StructureTreeModel(self.reaader)
+        self.stm_test.reload_hierarchy(dominant=True, subj=subject)
+        dicti = nameList
+        if nameList is None:
+            dicti = cached_get_free_surfer_dict()
+            # print(dicti.__len__())
+        lists = []
+        vector = []
+        for key in dicti:
+            lists.append(key)
+            vector.append([0,0,0,key])
+        # print(vector.__len__())
+        self.stm_test.set_selected_structures(lists)
+        spaces = self.__link_space
+        if self.__link_space == "None":
+            spaces = self.__roi_space
+        for x in range(lists.__len__()):
+            rl_name = solve_laterality(self.__get_laterality(self.__origin), lists[x])
+            try:
+                self.__available_models = set(
+                    self.__reader.get("MODEL", subject, index=True))
+            except Exception:
+                self.__available_models = set()
+            if rl_name in self.__available_models:
+                model = self.__reader.get(
+                    'MODEL', subject, name=rl_name, space=spaces)
+                coord_x = 0.0
+                coord_y = 0.0
+                coord_z = 0.0
+                for y in range(model.GetNumberOfPoints()):
+                    point = [0, 0, 0]
+                    model.GetPoint(y, point)
+                    coord_x += (point[0] / model.GetNumberOfPoints())
+                    coord_y += (point[1] / model.GetNumberOfPoints())
+                    coord_z += (point[2] / model.GetNumberOfPoints())
+                vector[x][0] = coord_x
+                vector[x][1] = coord_y
+                vector[x][2] = coord_z
+        # if nameList is None:
+        #     for vect in range(vector.__len__()-1,-1,-1):
+        #         if vector[vect][0] == 0.0 or vector[vect][0] == 0:
+        #             lists.remove(vector[vect][3])
+        #             vector.pop(vect)
+        return (vector,lists)
 
     def set_controls(self, value):
         self.ui.select_all_button.setEnabled(value)
