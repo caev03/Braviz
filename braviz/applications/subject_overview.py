@@ -1065,7 +1065,7 @@ class SubjectOverviewApp(QMainWindow):
         meta["application"] = os.path.splitext(os.path.basename(__file__))[0]
         state["meta"] = meta
         logger = logging.getLogger(__name__)
-        logger.info("Current state %s" % state)
+        #logger.info("Current state %s" % state)
         return state
 
     def save_state(self):

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff8cabfa-5b3e-42a5-add6-0a7675cf06e1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/braviz/applications/kmc400_hosts.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/braviz/applications/run_braviz 40.lnk" afterPath="$PROJECT_DIR$/braviz/applications/run_braviz 40.lnk" />
+    <list default="true" id="ff8cabfa-5b3e-42a5-add6-0a7675cf06e1" name="Default" comment="Avances 02-Dic-16">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/braviz/applications/build_roi.py" afterPath="$PROJECT_DIR$/braviz/applications/build_roi.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/braviz/applications/relationship_viewer.py" afterPath="$PROJECT_DIR$/braviz/applications/relationship_viewer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/braviz/applications/subject_overview.py" afterPath="$PROJECT_DIR$/braviz/applications/subject_overview.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/braviz/visualization/subject_viewer.py" afterPath="$PROJECT_DIR$/braviz/visualization/subject_viewer.py" />
     </list>
     <ignored path="braviz.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="build_roi.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/braviz/applications/build_roi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+            <state relative-caret-position="410">
+              <caret line="210" column="90" selection-start-line="210" selection-start-column="90" selection-end-line="210" selection-end-column="90" />
               <folding>
                 <element signature="e#1345#1392#0" expanded="true" />
               </folding>
@@ -40,17 +39,182 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interpolate.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/scipy/interpolate/interpolate.py">
+      <file leaf-file-name="QDialog.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QDialog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25959">
-              <caret line="1527" column="45" selection-start-line="1527" selection-start-column="45" selection-end-line="1527" selection-end-column="45" />
+            <state relative-caret-position="187">
+              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QDialogButtonBox.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QDialogButtonBox.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="257" column="4" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geom_db.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/braviz/readAndFilter/geom_db.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="328" column="17" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="17" />
+              <folding>
+                <marker date="1467238154429" expanded="true" signature="2294:2343" ph="SELECT count... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="3078:3155" ph="INSERT INTO geom_rois... " />
+                <marker date="1467238154429" expanded="true" signature="3655:4057" ph="SELECT roi_n... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="3766:3836" ph="SELECT spher... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="3867:3978" ph="SELECT roi_i... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="3943:3977" ph="select spher... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="4212:4633" ph="SELECT roi_n... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="4323:4393" ph="SELECT spher... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="4424:4535" ph="SELECT roi_i... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="4500:4534" ph="select spher... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="4998:5376" ph="SELECT roi_n... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="5101:5165" ph="SELECT line_... geom_lines" />
+                <marker date="1467238154429" expanded="true" signature="5188:5291" ph="SELECT roi_i... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="5260:5290" ph="select line_... geom_lines" />
+                <marker date="1467238154429" expanded="true" signature="5848:5899" ph="SELECT roi_c... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="5994:6043" ph="SELECT roi_c... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="6342:6389" ph="SELECT roi_i... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="6651:6698" ph="SELECT roi_n... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="7148:7197" ph="SELECT roi_t... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="7301:7348" ph="SELECT roi_t... geom_rois" />
+                <marker date="1467238154429" expanded="true" signature="7718:7770" ph="SELECT subje... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="8133:8181" ph="SELECT subje... geom_lines" />
+                <marker date="1467238154429" expanded="true" signature="9104:9189" ph="SELECT radiu... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="9608:9685" ph="SELECT subje... geom_spheres" />
+                <marker date="1467238154429" expanded="true" signature="10177:10221" ph="DELETE FROM " />
+                <marker date="1467238154429" expanded="true" signature="10269:10309" ph="DELETE FROM " />
+                <marker date="1467238154429" expanded="true" signature="10321:10359" ph="DELETE FROM " />
+                <marker date="1467238154429" expanded="true" signature="11375:11461" ph="SELECT p1_x,... geom_lines" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tabular_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/braviz/readAndFilter/tabular_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-149">
+              <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+              <folding>
+                <marker date="1449592452714" expanded="true" signature="2629:2654" ph="pragma busy_... " />
+                <marker date="1449592452714" expanded="true" signature="2880:2928" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="4268:4307" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="4377:4438" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="5020:5069" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="5139:5209" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="6047:6109" ph="SELECT value... var_values" />
+                <marker date="1449592452714" expanded="true" signature="6724:6752" ph="SELECT subje... SUBJECTS" />
+                <marker date="1449592452714" expanded="true" signature="6851:6993" ph="SELECT subje... subjects" />
+                <marker date="1449592452714" expanded="true" signature="6944:6992" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="7632:7660" ph="SELECT subje... SUBJECTS" />
+                <marker date="1449592452714" expanded="true" signature="7773:7821" ph="SELECT var_n... variables" />
+                <marker date="1449592452714" expanded="true" signature="8092:8185" ph="SELECT subje... subjects" />
+                <marker date="1449592452714" expanded="true" signature="8782:8829" ph="SELECT is_re... variables" />
+                <marker date="1449592452714" expanded="true" signature="9297:9346" ph="SELECT count... variables" />
+                <marker date="1449592452714" expanded="true" signature="9989:10038" ph="SELECT is_re... variables" />
+                <marker date="1449592452714" expanded="true" signature="12369:12599" ph="SELECT label... label2" />
+                <marker date="1449592452714" expanded="true" signature="12369:12697" ph="SELECT label... " />
+                <marker date="1449592452714" expanded="true" signature="12408:12503" ph="SELECT disti... var_values" />
+                <marker date="1449592452714" expanded="true" signature="12615:12676" ph="SELECT label... nom_meta" />
+                <marker date="1449592452714" expanded="true" signature="13134:13436" ph="SELECT label... label2" />
+                <marker date="1449592452714" expanded="true" signature="13134:13595" ph="SELECT label... " />
+                <marker date="1449592452714" expanded="true" signature="13185:13332" ph="SELECT disti... variables" />
+                <marker date="1449592452714" expanded="true" signature="13460:13570" ph="SELECT label... nom_meta" />
+                <marker date="1449592452714" expanded="true" signature="13521:13569" ph="select var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="13993:14041" ph="SELECT var_n... variables" />
+                <marker date="1449592452714" expanded="true" signature="14431:14479" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="15023:15071" ph="SELECT max_v... ratio_meta" />
+                <marker date="1449592452714" expanded="true" signature="15151:15264" ph="select MAX(v... *" />
+                <marker date="1449592452714" expanded="true" signature="15175:15220" ph="select * fro... var_values" />
+                <marker date="1449592452714" expanded="true" signature="15795:15843" ph="SELECT min_v... ratio_meta" />
+                <marker date="1449592452714" expanded="true" signature="15923:16036" ph="select Min(v... *" />
+                <marker date="1449592452714" expanded="true" signature="15947:15992" ph="select * fro... var_values" />
+                <marker date="1449592452714" expanded="true" signature="16611:16668" ph="SELECT min_v... ratio_meta" />
+                <marker date="1449592452714" expanded="true" signature="16748:16873" ph="select MIN(v... *" />
+                <marker date="1449592452714" expanded="true" signature="16784:16829" ph="select * fro... var_values" />
+                <marker date="1449592452714" expanded="true" signature="17448:17529" ph="SELECT min_v... ratio_meta" />
+                <marker date="1449592452714" expanded="true" signature="17637:17811" ph="select MIN(v... *" />
+                <marker date="1449592452714" expanded="true" signature="17673:17718" ph="select * fro... var_values" />
+                <marker date="1449592452714" expanded="true" signature="17745:17793" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="18489:18583" ph="SELECT min_v... ratio_meta" />
+                <marker date="1449592452714" expanded="true" signature="18691:18877" ph="select MIN(v... *" />
+                <marker date="1449592452714" expanded="true" signature="18739:18784" ph="select * fro... var_values" />
+                <marker date="1449592452714" expanded="true" signature="18811:18859" ph="SELECT var_i... variables" />
+                <marker date="1449592452714" expanded="true" signature="19481:19538" ph="SELECT var_n... variables" />
+                <marker date="1449592452714" expanded="true" signature="19844:19906" ph="SELECT value... var_values" />
+                <marker date="1449592452714" expanded="true" signature="20166:20300" ph="SELECT name var_values" />
+                <marker date="1449592452714" expanded="true" signature="20801:20846" ph="SELECT subje... subjects" />
+                <marker date="1449592452714" expanded="true" signature="21166:21224" ph="SELECT descr... var_descriptions" />
+                <marker date="1449592452714" expanded="true" signature="21592:21641" ph="SELECT var_i... var_descriptions" />
+                <marker date="1449592452714" expanded="true" signature="21972:22054" ph="SELECT descr... var_descriptions" />
+                <marker date="1449592452714" expanded="true" signature="22531:22582" ph="UPDATE varia... " />
+                <marker date="1449592452714" expanded="true" signature="22979:23029" ph="UPDATE varia... " />
+                <marker date="1449592452714" expanded="true" signature="27276:27349" ph="INSERT INTO variables... " />
+                <marker date="1449592452714" expanded="true" signature="29384:29446" ph="SELECT value... var_values" />
+                <marker date="1449592452714" expanded="true" signature="30113:30399" ph="SELECT min(v... var_values" />
+                <marker date="1449592452714" expanded="true" signature="32108:32151" ph="INSERT INTO variables... " />
+                <marker date="1449592452714" expanded="true" signature="33122:33162" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="33248:33286" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="33306:33346" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="33480:33526" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="33621:33665" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="33754:33793" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="34637:34677" ph="DELETE FROM " />
+                <marker date="1449592452714" expanded="true" signature="34765:34803" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="load_roi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/load_roi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QTableView.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QTableView.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="371" column="8" selection-start-line="371" selection-start-column="8" selection-end-line="371" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roi_builder_start.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/roi_builder_start.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="564">
+              <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="caev03 &lt;ca.escobar2434@uniandes.edu.co&gt;" />
+      </list>
+    </option>
+    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -61,6 +225,7 @@
         <option value="$PROJECT_DIR$/braviz/interaction/qt_structures_model.py" />
         <option value="$PROJECT_DIR$/braviz/applications/subject_overview.py" />
         <option value="$PROJECT_DIR$/braviz/visualization/subject_viewer.py" />
+        <option value="$PROJECT_DIR$/braviz/interaction/qt_guis/load_roi.py" />
         <option value="$PROJECT_DIR$/braviz/applications/build_roi.py" />
       </list>
     </option>
@@ -77,7 +242,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -102,7 +267,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -156,12 +320,13 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
@@ -385,6 +550,14 @@
       <option name="presentableId" value="Default" />
       <updated>1477581668940</updated>
     </task>
+    <task id="LOCAL-00001" summary="Avances 02-Dic-16">
+      <created>1480712459442</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1480712459442</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -400,14 +573,15 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13219616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.096481875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.50388455" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29329005" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21753247" sideWeight="0.4936034" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4047619" sideWeight="0.49611542" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07467532" sideWeight="0.49611542" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -415,7 +589,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29411766" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -431,6 +604,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Avances 02-Dic-16" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avances 02-Dic-16" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -444,42 +621,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/braviz/applications/export_scalar_to_db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42483">
-          <caret line="2499" column="8" selection-start-line="2499" selection-start-column="8" selection-end-line="2499" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_structures_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7259">
-          <caret line="427" column="8" selection-start-line="427" selection-start-column="8" selection-end-line="427" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/subject_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4114">
-          <caret line="242" column="13" selection-start-line="242" selection-start-column="13" selection-end-line="242" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/braviz/applications/subject_overview.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10404">
-          <caret line="612" column="38" selection-start-line="612" selection-start-column="38" selection-end-line="612" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/braviz/visualization/subject_viewer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -637,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/roi_builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="377" column="33" selection-start-line="377" selection-start-column="33" selection-end-line="377" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/braviz/interaction/roi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-816">
@@ -666,24 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/braviz/readAndFilter/tabular_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="1663" column="8" selection-start-line="1663" selection-start-column="8" selection-end-line="1663" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QTableView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="371" column="8" selection-start-line="371" selection-start-column="8" selection-end-line="371" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -797,16 +917,174 @@
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/scipy/interpolate/interpolate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25959">
+        <state relative-caret-position="488">
           <caret line="1527" column="45" selection-start-line="1527" selection-start-column="45" selection-end-line="1527" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/roi_builder_start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QTableView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="371" column="8" selection-start-line="371" selection-start-column="8" selection-end-line="371" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/load_roi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QDialogButtonBox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="257" column="4" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/PyQt4/QtGui/QDialog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braviz/readAndFilter/tabular_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+          <folding>
+            <marker date="1449592452714" expanded="true" signature="2629:2654" ph="pragma busy_... " />
+            <marker date="1449592452714" expanded="true" signature="2880:2928" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="4268:4307" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="4377:4438" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="5020:5069" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="5139:5209" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="6047:6109" ph="SELECT value... var_values" />
+            <marker date="1449592452714" expanded="true" signature="6724:6752" ph="SELECT subje... SUBJECTS" />
+            <marker date="1449592452714" expanded="true" signature="6851:6993" ph="SELECT subje... subjects" />
+            <marker date="1449592452714" expanded="true" signature="6944:6992" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="7632:7660" ph="SELECT subje... SUBJECTS" />
+            <marker date="1449592452714" expanded="true" signature="7773:7821" ph="SELECT var_n... variables" />
+            <marker date="1449592452714" expanded="true" signature="8092:8185" ph="SELECT subje... subjects" />
+            <marker date="1449592452714" expanded="true" signature="8782:8829" ph="SELECT is_re... variables" />
+            <marker date="1449592452714" expanded="true" signature="9297:9346" ph="SELECT count... variables" />
+            <marker date="1449592452714" expanded="true" signature="9989:10038" ph="SELECT is_re... variables" />
+            <marker date="1449592452714" expanded="true" signature="12369:12599" ph="SELECT label... label2" />
+            <marker date="1449592452714" expanded="true" signature="12369:12697" ph="SELECT label... " />
+            <marker date="1449592452714" expanded="true" signature="12408:12503" ph="SELECT disti... var_values" />
+            <marker date="1449592452714" expanded="true" signature="12615:12676" ph="SELECT label... nom_meta" />
+            <marker date="1449592452714" expanded="true" signature="13134:13436" ph="SELECT label... label2" />
+            <marker date="1449592452714" expanded="true" signature="13134:13595" ph="SELECT label... " />
+            <marker date="1449592452714" expanded="true" signature="13185:13332" ph="SELECT disti... variables" />
+            <marker date="1449592452714" expanded="true" signature="13460:13570" ph="SELECT label... nom_meta" />
+            <marker date="1449592452714" expanded="true" signature="13521:13569" ph="select var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="13993:14041" ph="SELECT var_n... variables" />
+            <marker date="1449592452714" expanded="true" signature="14431:14479" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="15023:15071" ph="SELECT max_v... ratio_meta" />
+            <marker date="1449592452714" expanded="true" signature="15151:15264" ph="select MAX(v... *" />
+            <marker date="1449592452714" expanded="true" signature="15175:15220" ph="select * fro... var_values" />
+            <marker date="1449592452714" expanded="true" signature="15795:15843" ph="SELECT min_v... ratio_meta" />
+            <marker date="1449592452714" expanded="true" signature="15923:16036" ph="select Min(v... *" />
+            <marker date="1449592452714" expanded="true" signature="15947:15992" ph="select * fro... var_values" />
+            <marker date="1449592452714" expanded="true" signature="16611:16668" ph="SELECT min_v... ratio_meta" />
+            <marker date="1449592452714" expanded="true" signature="16748:16873" ph="select MIN(v... *" />
+            <marker date="1449592452714" expanded="true" signature="16784:16829" ph="select * fro... var_values" />
+            <marker date="1449592452714" expanded="true" signature="17448:17529" ph="SELECT min_v... ratio_meta" />
+            <marker date="1449592452714" expanded="true" signature="17637:17811" ph="select MIN(v... *" />
+            <marker date="1449592452714" expanded="true" signature="17673:17718" ph="select * fro... var_values" />
+            <marker date="1449592452714" expanded="true" signature="17745:17793" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="18489:18583" ph="SELECT min_v... ratio_meta" />
+            <marker date="1449592452714" expanded="true" signature="18691:18877" ph="select MIN(v... *" />
+            <marker date="1449592452714" expanded="true" signature="18739:18784" ph="select * fro... var_values" />
+            <marker date="1449592452714" expanded="true" signature="18811:18859" ph="SELECT var_i... variables" />
+            <marker date="1449592452714" expanded="true" signature="19481:19538" ph="SELECT var_n... variables" />
+            <marker date="1449592452714" expanded="true" signature="19844:19906" ph="SELECT value... var_values" />
+            <marker date="1449592452714" expanded="true" signature="20166:20300" ph="SELECT name var_values" />
+            <marker date="1449592452714" expanded="true" signature="20801:20846" ph="SELECT subje... subjects" />
+            <marker date="1449592452714" expanded="true" signature="21166:21224" ph="SELECT descr... var_descriptions" />
+            <marker date="1449592452714" expanded="true" signature="21592:21641" ph="SELECT var_i... var_descriptions" />
+            <marker date="1449592452714" expanded="true" signature="21972:22054" ph="SELECT descr... var_descriptions" />
+            <marker date="1449592452714" expanded="true" signature="22531:22582" ph="UPDATE varia... " />
+            <marker date="1449592452714" expanded="true" signature="22979:23029" ph="UPDATE varia... " />
+            <marker date="1449592452714" expanded="true" signature="27276:27349" ph="INSERT INTO variables... " />
+            <marker date="1449592452714" expanded="true" signature="29384:29446" ph="SELECT value... var_values" />
+            <marker date="1449592452714" expanded="true" signature="30113:30399" ph="SELECT min(v... var_values" />
+            <marker date="1449592452714" expanded="true" signature="32108:32151" ph="INSERT INTO variables... " />
+            <marker date="1449592452714" expanded="true" signature="33122:33162" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="33248:33286" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="33306:33346" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="33480:33526" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="33621:33665" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="33754:33793" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="34637:34677" ph="DELETE FROM " />
+            <marker date="1449592452714" expanded="true" signature="34765:34803" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braviz/readAndFilter/geom_db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="328" column="17" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="17" />
+          <folding>
+            <marker date="1467238154429" expanded="true" signature="2294:2343" ph="SELECT count... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="3078:3155" ph="INSERT INTO geom_rois... " />
+            <marker date="1467238154429" expanded="true" signature="3655:4057" ph="SELECT roi_n... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="3766:3836" ph="SELECT spher... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="3867:3978" ph="SELECT roi_i... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="3943:3977" ph="select spher... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="4212:4633" ph="SELECT roi_n... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="4323:4393" ph="SELECT spher... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="4424:4535" ph="SELECT roi_i... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="4500:4534" ph="select spher... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="4998:5376" ph="SELECT roi_n... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="5101:5165" ph="SELECT line_... geom_lines" />
+            <marker date="1467238154429" expanded="true" signature="5188:5291" ph="SELECT roi_i... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="5260:5290" ph="select line_... geom_lines" />
+            <marker date="1467238154429" expanded="true" signature="5848:5899" ph="SELECT roi_c... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="5994:6043" ph="SELECT roi_c... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="6342:6389" ph="SELECT roi_i... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="6651:6698" ph="SELECT roi_n... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="7148:7197" ph="SELECT roi_t... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="7301:7348" ph="SELECT roi_t... geom_rois" />
+            <marker date="1467238154429" expanded="true" signature="7718:7770" ph="SELECT subje... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="8133:8181" ph="SELECT subje... geom_lines" />
+            <marker date="1467238154429" expanded="true" signature="9104:9189" ph="SELECT radiu... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="9608:9685" ph="SELECT subje... geom_spheres" />
+            <marker date="1467238154429" expanded="true" signature="10177:10221" ph="DELETE FROM " />
+            <marker date="1467238154429" expanded="true" signature="10269:10309" ph="DELETE FROM " />
+            <marker date="1467238154429" expanded="true" signature="10321:10359" ph="DELETE FROM " />
+            <marker date="1467238154429" expanded="true" signature="11375:11461" ph="SELECT p1_x,... geom_lines" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/braviz/interaction/qt_guis/roi_builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5573">
+          <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/braviz/applications/build_roi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+        <state relative-caret-position="410">
+          <caret line="210" column="90" selection-start-line="210" selection-start-column="90" selection-end-line="210" selection-end-column="90" />
           <folding>
             <element signature="e#1345#1392#0" expanded="true" />
           </folding>
