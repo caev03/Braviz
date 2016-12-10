@@ -209,7 +209,7 @@ class ExtrapolateDialog(QDialog):
             for v in tempVector:
                 values.append(v[i])
             answ.append(griddata(aVec,values,np.array(self.__origin_center),method='linear'))
-        ctr = answ
+        ctr = [answ[0][0],answ[1][0],answ[2][0]]
         # if self.__link_space == "None":
         #     ctr = self.__origin_center
         # else:
@@ -241,7 +241,7 @@ class ExtrapolateDialog(QDialog):
             # print norms_r_roi
             r = np.mean(norms_r_roi)
 
-        # geom_db.save_sphere(self.__sphere_id, target, r, ctr)
+        geom_db.save_sphere(self.__sphere_id, target, r, ctr)
         return ctr
 
     def sortVector(self, tempVector, vector):
@@ -297,63 +297,62 @@ class ExtrapolateDialog(QDialog):
         origin_sphere = geom_db.load_sphere(self.__sphere_id, self.__origin)
         self.__origin_radius = origin_sphere[0]
         self.__origin_center = origin_sphere[1:4]
-        for asdasd in range(5,15,1):
-            self.__kparameter = asdasd
-            self.__origin_img_id = self.__origin
-            result = self.getDistanceVector(self.__origin, self.__kparameter, None)
-            vector = result[0]
-            lists = result[1]
-            if self.__link_space != "None":
+        self.__kparameter = 13
+        self.__origin_img_id = self.__origin
+        result = self.getDistanceVector(self.__origin, self.__kparameter, None)
+        vector = result[0]
+        lists = result[1]
+        if self.__link_space != "None":
+            # roi -> world
+            ctr_world = self.__reader.transform_points_to_space(self.__origin_center, self.__roi_space,
+                                                                self.__origin_img_id, inverse=True)
+            # world -> link
+            ctr_link = self.__reader.transform_points_to_space(ctr_world, self.__link_space,
+                                                               self.__origin_img_id, inverse=False)
+            self.__center_link = ctr_link
+            if self.__scale_radius is True:
+                rad_vectors = (
+                    self.__origin_center + v * self.__origin_radius for v in UNIT_VECTORS)
                 # roi -> world
-                ctr_world = self.__reader.transform_points_to_space(self.__origin_center, self.__roi_space,
-                                                                    self.__origin_img_id, inverse=True)
+                rad_vectors_world = (self.__reader.transform_points_to_space(r, self.__roi_space,
+                                                                             self.__origin_img_id, inverse=True) for
+                                     r in
+                                     rad_vectors)
                 # world -> link
-                ctr_link = self.__reader.transform_points_to_space(ctr_world, self.__link_space,
-                                                                   self.__origin_img_id, inverse=False)
-                self.__center_link = ctr_link
-                if self.__scale_radius is True:
-                    rad_vectors = (
-                        self.__origin_center + v * self.__origin_radius for v in UNIT_VECTORS)
-                    # roi -> world
-                    rad_vectors_world = (self.__reader.transform_points_to_space(r, self.__roi_space,
-                                                                                 self.__origin_img_id, inverse=True) for
-                                         r in
-                                         rad_vectors)
-                    # world -> link
-                    rad_vectors_link = (self.__reader.transform_points_to_space(r, self.__link_space,
-                                                                                self.__origin_img_id, inverse=False) for
-                                        r in
-                                        rad_vectors_world)
-                    self.__radius_link = list(rad_vectors_link)
-            goldVector = [self.__origin_center, self.__origin_center]  # getGoldVector()
-            valDist = 0
-            valX = 0
-            valY = 0
-            valZ = 0
-            for i, s in enumerate(selected):
-                QtGui.QApplication.instance().processEvents()
-                if self.__cancel_flag is True:
-                    break
-                answer = self.extrapolate_one(s, vector, lists)
-                print(answer)
-                valDist += ((goldVector[i][0] - answer[0]) ** 2) + ((goldVector[i][1] - answer[1]) ** 2) + (
+                rad_vectors_link = (self.__reader.transform_points_to_space(r, self.__link_space,
+                                                                            self.__origin_img_id, inverse=False) for
+                                    r in
+                                    rad_vectors_world)
+                self.__radius_link = list(rad_vectors_link)
+        goldVector = self.get_gold_vector()
+        valDist = 0
+        valX = 0
+        valY = 0
+        valZ = 0
+        for i, s in enumerate(selected):
+            QtGui.QApplication.instance().processEvents()
+            if self.__cancel_flag is True:
+                break
+            answer = self.extrapolate_one(s, vector, lists)
+            print(answer)
+            valDist += ((goldVector[i][0] - answer[0]) ** 2) + ((goldVector[i][1] - answer[1]) ** 2) + (
                 (goldVector[i][2] - answer[2]) ** 2)
-                valX += ((goldVector[i][0] - answer[0]) ** 2)
-                valY += ((goldVector[i][1] - answer[1]) ** 2)
-                valZ += ((goldVector[i][2] - answer[2]) ** 2)
-                self.ui.progressBar.setValue((i + 1) * 100 / len(selected))
-            valDist = valDist ** (1 / 2)
-            valX = valX ** (1 / 2)
-            valY = valY ** (1 / 2)
-            valZ = valZ ** (1 / 2)
-            print("b",valDist,valX,valY,valZ)
-        # r, c = self.create_data_cols()
-        # self.targets_model.set_data_cols((r, c))
-        # self.__started = False
-        # self.ui.start_button.setText("Start Extrapolation")
-        # self.set_controls(1)
-        # QtCore.QTimer.singleShot(
-        #     1000, partial_f(self.ui.start_button.setEnabled, 1))
+            valX += ((goldVector[i][0] - answer[0]) ** 2)
+            valY += ((goldVector[i][1] - answer[1]) ** 2)
+            valZ += ((goldVector[i][2] - answer[2]) ** 2)
+            self.ui.progressBar.setValue((i + 1) * 100 / len(selected))
+        valDist = valDist ** (1 / 2)
+        valX = valX ** (1 / 2)
+        valY = valY ** (1 / 2)
+        valZ = valZ ** (1 / 2)
+        print("b", valDist, valX, valY, valZ)
+        r, c = self.create_data_cols()
+        self.targets_model.set_data_cols((r, c))
+        self.__started = False
+        self.ui.start_button.setText("Start Extrapolation")
+        self.set_controls(1)
+        QtCore.QTimer.singleShot(
+            1000, partial_f(self.ui.start_button.setEnabled, 1))
 
     def getDistanceVector(self, subject,amount,nameList=None):
         self.reaader = braviz.readAndFilter.BravizAutoReader()
@@ -411,6 +410,16 @@ class ExtrapolateDialog(QDialog):
                 lists.append(dicc[vect[4]])
                 vect[4] = dicc[vect[4]]
         return vector, lists
+
+    def get_gold_vector(self):
+        projectname = "LIFBE"
+        nameList = [["-B02",182],["-B03",207],["-B04",1300],["-B05",1326]]
+        data = []
+        for name in nameList:
+            id = geom_db.get_roi_id(projectname+name[0])
+            r, x, y, z = geom_db.load_sphere(id,name[1])
+            data.append([x,y,z])
+        return data
 
     def set_controls(self, value):
         self.ui.select_all_button.setEnabled(value)
