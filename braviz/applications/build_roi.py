@@ -210,15 +210,15 @@ class ExtrapolateDialog(QDialog):
                 values.append(v[i])
             answ.append(griddata(aVec,values,np.array(self.__origin_center),method='linear'))
         ctr = [answ[0][0],answ[1][0],answ[2][0]]
-        # if self.__link_space == "None":
-        #     ctr = self.__origin_center
-        # else:
-        #     try:
-        #         ctr = self.translate_one_point(self.__center_link, target)
-        #     except Exception:
-        #         log.warning("Couldn't extrapolate subject %s", target)
-        #         return
-        #
+        if self.__link_space == "None":
+            ctrr = self.__origin_center
+        else:
+            try:
+                ctrr = self.translate_one_point(self.__center_link, target)
+            except Exception:
+                log.warning("Couldn't extrapolate subject %s", target)
+                return
+
         max_opt = self.ui.optimize_radius.value()
         if max_opt > 0:
             try:
@@ -242,7 +242,7 @@ class ExtrapolateDialog(QDialog):
             r = np.mean(norms_r_roi)
 
         geom_db.save_sphere(self.__sphere_id, target, r, ctr)
-        return ctr
+        return ctr,ctrr
 
     def sortVector(self, tempVector, vector):
         dict = {}
@@ -297,7 +297,7 @@ class ExtrapolateDialog(QDialog):
         origin_sphere = geom_db.load_sphere(self.__sphere_id, self.__origin)
         self.__origin_radius = origin_sphere[0]
         self.__origin_center = origin_sphere[1:4]
-        self.__kparameter = 13
+        self.__kparameter = 10
         self.__origin_img_id = self.__origin
         result = self.getDistanceVector(self.__origin, self.__kparameter, None)
         vector = result[0]
@@ -325,26 +325,55 @@ class ExtrapolateDialog(QDialog):
                                     rad_vectors_world)
                 self.__radius_link = list(rad_vectors_link)
         goldVector = self.get_gold_vector()
+        goldVector2 = goldVector
         valDist = 0
+        valDist2 = 0
         valX = 0
+        valX2 = 0
         valY = 0
+        valY2 = 0
         valZ = 0
+        valZ2 = 0
         for i, s in enumerate(selected):
             QtGui.QApplication.instance().processEvents()
             if self.__cancel_flag is True:
                 break
-            answer = self.extrapolate_one(s, vector, lists)
+            answer,last = self.extrapolate_one(s, vector, lists)
             print(answer)
+            print(last)
             valDist += ((goldVector[i][0] - answer[0]) ** 2) + ((goldVector[i][1] - answer[1]) ** 2) + (
                 (goldVector[i][2] - answer[2]) ** 2)
+            valDist2 += ((goldVector2[i][0] - last[0]) ** 2) + ((goldVector2[i][1] - last[1]) ** 2) + (
+                (goldVector2[i][2] - last[2]) ** 2)
             valX += ((goldVector[i][0] - answer[0]) ** 2)
+            valX2 += ((goldVector2[i][0] - last[0]) ** 2)
             valY += ((goldVector[i][1] - answer[1]) ** 2)
+            valY2 += ((goldVector2[i][1] - last[1]) ** 2)
             valZ += ((goldVector[i][2] - answer[2]) ** 2)
+            valZ2 += ((goldVector2[i][2] - last[2]) ** 2)
             self.ui.progressBar.setValue((i + 1) * 100 / len(selected))
         valDist = valDist ** (1 / 2)
+        valDist2 = valDist2 ** (1 / 2)
         valX = valX ** (1 / 2)
+        valX2 = valX2 ** (1 / 2)
         valY = valY ** (1 / 2)
+        valY2 = valY2 ** (1 / 2)
         valZ = valZ ** (1 / 2)
+        valZ2 = valZ2 ** (1 / 2)
+        target = open("C:/Users/imagine/Desktop/PruebasTesisCamilo/data.csv", 'w')
+        target.truncate()
+        target.write("BravizOriginal,BravizNuevo")
+        target.write("\n")
+        target.write(""+str(valDist)+","+str(valDist2))
+        target.write("\n")
+        target.write("" + str(valX) + "," + str(valX2))
+        target.write("\n")
+        target.write("" + str(valY) + "," + str(valY2))
+        target.write("\n")
+        target.write("" + str(valZ) + "," + str(valZ2))
+        target.write("\n")
+        target.close()
+        print("a", valDist2, valX2, valY2, valZ2)
         print("b", valDist, valX, valY, valZ)
         r, c = self.create_data_cols()
         self.targets_model.set_data_cols((r, c))
@@ -412,8 +441,8 @@ class ExtrapolateDialog(QDialog):
         return vector, lists
 
     def get_gold_vector(self):
-        projectname = "LIFBE"
-        nameList = [["-B02",182],["-B03",207],["-B04",1300],["-B05",1326]]
+        projectname = "LIAFRE"
+        nameList = [["-B02",1300],["-B03",182],["-B04",1326],["-B05",207]]
         data = []
         for name in nameList:
             id = geom_db.get_roi_id(projectname+name[0])
