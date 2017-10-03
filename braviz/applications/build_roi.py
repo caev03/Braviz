@@ -203,6 +203,7 @@ class ExtrapolateDialog(QDialog):
             aVec.append([v[0],v[1],v[2]])
         tempVector = self.getDistanceVector(target,self.__kparameter, lists)
         tempVector = tempVector[0]
+        print(target, tempVector)
         answ = []
         for i in range(3):
             values = []
@@ -293,15 +294,13 @@ class ExtrapolateDialog(QDialog):
         # set parameters
         self.__origin = int(self.ui.origin_combo.currentText())
         self.__link_space = str(self.ui.link_combo.currentText())
+        print(self.__link_space)
         self.__scale_radius = (self.ui.radio_combo.currentIndex() == 1)
         origin_sphere = geom_db.load_sphere(self.__sphere_id, self.__origin)
         self.__origin_radius = origin_sphere[0]
         self.__origin_center = origin_sphere[1:4]
-        self.__kparameter = 10
+        self.__kparameter = 13
         self.__origin_img_id = self.__origin
-        result = self.getDistanceVector(self.__origin, self.__kparameter, None)
-        vector = result[0]
-        lists = result[1]
         if self.__link_space != "None":
             # roi -> world
             ctr_world = self.__reader.transform_points_to_space(self.__origin_center, self.__roi_space,
@@ -324,7 +323,16 @@ class ExtrapolateDialog(QDialog):
                                     r in
                                     rad_vectors_world)
                 self.__radius_link = list(rad_vectors_link)
+        else:
+            self.__center_link = self.__origin_center
+        result = self.getDistanceVector(self.__origin, self.__kparameter, None)
+        vector = result[0]
+        print("user", vector)
+        lists = result[1]
         goldVector = self.get_gold_vector()
+        goldVectorDic = {}
+        for vect in range(goldVector.__len__()):
+            goldVectorDic[goldVector[vect][3]] = vect;
         goldVector2 = goldVector
         valDist = 0
         valDist2 = 0
@@ -339,19 +347,21 @@ class ExtrapolateDialog(QDialog):
             if self.__cancel_flag is True:
                 break
             answer,last = self.extrapolate_one(s, vector, lists)
-            print(answer)
-            print(last)
+            iter = i
+            i = goldVectorDic[s]
             valDist += ((goldVector[i][0] - answer[0]) ** 2) + ((goldVector[i][1] - answer[1]) ** 2) + (
                 (goldVector[i][2] - answer[2]) ** 2)
             valDist2 += ((goldVector2[i][0] - last[0]) ** 2) + ((goldVector2[i][1] - last[1]) ** 2) + (
                 (goldVector2[i][2] - last[2]) ** 2)
             valX += ((goldVector[i][0] - answer[0]) ** 2)
+            print("nuevo",str(s),str(goldVector[i][0] - answer[0]),str(goldVector[i][1] - answer[1]),str(goldVector[i][2] - answer[2]))
+            print("original",str(s),str(goldVector2[i][0] - last[0]),str(goldVector2[i][1] - last[1]),str(goldVector2[i][2] - last[2]))
             valX2 += ((goldVector2[i][0] - last[0]) ** 2)
             valY += ((goldVector[i][1] - answer[1]) ** 2)
             valY2 += ((goldVector2[i][1] - last[1]) ** 2)
             valZ += ((goldVector[i][2] - answer[2]) ** 2)
             valZ2 += ((goldVector2[i][2] - last[2]) ** 2)
-            self.ui.progressBar.setValue((i + 1) * 100 / len(selected))
+            self.ui.progressBar.setValue((iter + 1) * 100 / len(selected))
         valDist = valDist ** (1 / 2)
         valDist2 = valDist2 ** (1 / 2)
         valX = valX ** (1 / 2)
@@ -362,7 +372,7 @@ class ExtrapolateDialog(QDialog):
         valZ2 = valZ2 ** (1 / 2)
         target = open("C:/Users/imagine/Desktop/PruebasTesisCamilo/data.csv", 'w')
         target.truncate()
-        target.write("BravizOriginal,BravizNuevo")
+        target.write("BravizNuevo,BravizOriginal")
         target.write("\n")
         target.write(""+str(valDist)+","+str(valDist2))
         target.write("\n")
@@ -424,7 +434,7 @@ class ExtrapolateDialog(QDialog):
                     vector[x][0] = coord_x
                     vector[x][1] = coord_y
                     vector[x][2] = coord_z
-                vector[x][3] = (((self.__origin_center[0]-vector[x][0])**2)+((self.__origin_center[1]-vector[x][1])**2)+((self.__origin_center[2]-vector[x][2])**2))**(1/2)
+                vector[x][3] = (((self.__center_link[0]-vector[x][0])**2)+((self.__center_link[1]-vector[x][1])**2)+((self.__center_link[2]-vector[x][2])**2))**(1/2)
         if nameList is None:
             for vect in range(vector.__len__()-1,-1,-1):
                 if vector[vect][0] == 0.0 and vector[vect][1] == 0.0 and vector[vect][2] == 0:
@@ -441,13 +451,13 @@ class ExtrapolateDialog(QDialog):
         return vector, lists
 
     def get_gold_vector(self):
-        projectname = "LIAFRE"
-        nameList = [["-B02",1300],["-B03",182],["-B04",1326],["-B05",207]]
+        projectname = "CINGULO"
+        nameList = [["_B02",182],["_B03",207],["_B04",1300],["_B05",1326],["_B06",93]]
         data = []
         for name in nameList:
             id = geom_db.get_roi_id(projectname+name[0])
             r, x, y, z = geom_db.load_sphere(id,name[1])
-            data.append([x,y,z])
+            data.append([x,y,z,name[1]])
         return data
 
     def set_controls(self, value):
